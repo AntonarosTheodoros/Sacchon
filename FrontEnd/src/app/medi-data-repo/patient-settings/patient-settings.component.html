@@ -1,0 +1,53 @@
+
+<div class="card  custom_style">
+
+
+<table class="table table-bordered table-hover" style="width: 100%;">
+
+    <tbody>
+      <tr>
+        <th>Username</th>
+        <td>{{patient.username}}</td>
+      </tr>
+
+      <tr>
+        <th>Name</th>
+        <td>{{patient.name}}</td>
+      </tr>
+      
+      <tr>
+        <th>Email</th>
+        <td>{{patient.email}}</td>
+    </tr>
+      
+    <tr>
+        <th>Adress</th>
+        <td>{{patient.address}}</td>
+    </tr>
+      
+    <tr>
+        <th>Age</th>
+        <td>{{patient.age}}</td>
+    </tr>
+      
+    <tr>
+        <th>Sex</th>
+        <td>{{patient.sex}}</td>
+    </tr>
+      
+    <tr>
+        <th>Date Registered</th>
+        <td>{{patient.dateRegistered | date}}</td>
+    </tr>
+    </tbody>
+
+        <!-- <td> <button class="btn btn-outline-success mr-2" (click)="editClickCarb(g.id)"> <i
+              class="fa fa-pencil"></i> </button> -->
+    
+
+  </table>
+</div>
+
+  <div class="container">
+    <button class="btn btn-lg btn-danger remove-button mt-2" (click)="removeAccount()"> Remove Account </button>
+  </div>

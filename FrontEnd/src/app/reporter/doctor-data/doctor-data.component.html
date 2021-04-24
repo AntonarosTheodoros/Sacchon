@@ -1,0 +1,105 @@
+<div class="card custom_style">
+    <div class="c-body">
+        <div class="mb-4"  style="text-align:center;">
+            <h3> Doctor Submissions</h3>
+        </div>
+      <div class="table-wrapper-scroll-y my-custom-scrollbar mystyle">
+  
+        <table class="table table-bordered table-striped ">
+  
+          <thead>
+  
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of doctorList">
+              <td scope="row">{{p.name}}</td>
+              <td> {{p.email}}</td>
+              <td> <button class="btn btn-outline-success mr-2" (click)="selectedView(p.id)"> <i
+                    class="fa fa-eye"></i></button>
+              </td>
+  
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  <div *ngIf="selectedDone">
+  
+  
+    <div class="card custom_style">
+  
+      <div class="c-body">
+        <div class="mb-4"  style="text-align:center;">
+            <h3> Specify period</h3>
+        </div>
+        <form [formGroup]="form" (submit)="formSubmit()">
+  
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm"></div>
+              <label for="example-date-input" class="col-form-label">From:</label>
+              <div class="col-sm">
+                <input class="form-control" type="datetime-local" value="2021-01-19" id="start " formControlName="start">
+              </div>
+              <div class="col-sm"></div>
+            </div>
+          </div>
+          <div class="row" style="margin-left:45%;width:20%; margin-bottom:5px;">
+            <button tynpe="submit" class="btn btn-primary" data-toggle="modal"
+              data-target="#exampleModalCenter">Search</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+    
+  </div>
+  
+  
+    <div *ngIf="formDone">
+      <div class="card custom_style">
+        <div class="c-body">
+            <div class="mb-4"  style="text-align:center;">
+                <h3> Consulations</h3>
+            </div>
+
+
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Medication Name</th>
+                        <th>Dosage</th>
+                        <th> Comment</th>
+                      </tr>
+                    </thead>
+  
+                    <tbody>
+                      <tr *ngFor="let c of consultation_list">
+                        <td scope="row">{{c.medicationName}}</td>
+                        <td> {{c.dosage}}</td>
+                        <td>{{c.comment}}</td>
+                      </tr>
+                    </tbody>
+  
+                  </table>
+                </div>
+              </div>
+          </div>
+
+
+
+</div>
+  
+  
+  
+  

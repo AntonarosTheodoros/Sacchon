@@ -1,0 +1,16 @@
+
+            <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+        
+                <div class="form-group">
+                    <label for="carbInput">gram: </label>
+                    <input type="text" class="form-control" id="carbInput" formControlName="carb">
+                </div>
+        
+                <div class="form-group">
+                    <label for="dateInput">Date: </label>
+                    <input type="datetime-local" class="form-control" id="dateInput" formControlName="date">
+                </div>
+        
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        

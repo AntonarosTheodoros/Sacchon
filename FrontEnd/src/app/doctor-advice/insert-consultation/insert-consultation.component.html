@@ -1,0 +1,23 @@
+
+<div>
+    <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+        
+        <div class="form-group">
+            <label for="medInput">Medication: </label>
+            <input type="text" class="form-control" id="medInput" formControlName="medicationName">
+        </div>
+
+        <div class="form-group">
+            <label for="dosageInput"> Dosage: </label>
+            <input type="text" class="form-control" id="dosageInput" formControlName="dosage">
+        </div>
+
+        <div class="form-group">
+            <label for="commentInput"> Comment: </label>
+            <input type="text" class="form-control" id="commentInput" formControlName="comment">
+        </div>
+
+
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

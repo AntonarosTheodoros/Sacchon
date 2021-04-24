@@ -1,0 +1,155 @@
+
+<div class="container">
+    <div class="card custom_style">
+    <article class="card-body" style="margin:auto; width: 80%;">
+      <h4 class="card-title mt-3 text-center">Add a new Doctor Account!</h4>
+      <p class="text-center">It's free and only takes a minute.</p>
+      <p class="divider-text">
+        <span></span>
+      </p>
+      <form [formGroup]="form"  (ngSubmit)="onClickSumbit()" novalidate>
+      <div class="row">
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text">  </span>
+          </div>
+          <input  type="text"
+          class="form-control"
+          id="username"
+          placeholder="Username"
+          formControlName="username"> 
+        </div> 
+      </div>
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">  </span>
+         </div>
+         <input  type="text"
+         class="form-control"
+         id="email"
+         placeholder="Email address"
+         formControlName="email">
+         <div *ngIf="form.get('email').hasError('required') && form.get('email').touched"  class="text-danger text-center mt-2">
+            This field is required
+          </div>
+        </div> 
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> </span>
+         </div>
+         <input  type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="First Name"
+                formControlName="firstName">
+
+                <div *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched" class="text-danger text-center mt-2">
+    
+          This field is required
+        </div>
+        </div> 
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">  </span>
+            <!-- <i class="fa fa-pencil"></i> -->
+         </div>
+         <input  type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Last name"
+                formControlName="lastName">
+    
+                <div *ngIf="form.get('lastName').hasError('required') && form.get('lastName').touched" class="text-danger text-center mt-2"> 
+          Field is required
+        </div>
+        </div> 
+      </div>
+
+
+
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> </span>
+         </div>
+         <input  type="text"
+                class="form-control"
+                id="address"
+                placeholder="Address"
+                formControlName="address">
+<!-- 
+                <div *ngIf="form.get('address').hasError('required') && form.get('address').touched" class="text-danger text-center mt-2">
+    
+                    This field is required
+        </div> -->
+        </div> 
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+        </div>
+            <input  type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            formControlName="password">
+
+            <div *ngIf="form.get('password').hasError('required') && form.get('password').touched"  class="text-danger text-center mt-2"> 
+            
+         
+            This Field is required
+            </div>
+        </div> 
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+            <span class="input-group-text"> </span>
+            </div>
+            <input  type="password"
+            class="form-control"
+            id="repeatPassword"
+            placeholder="Repeat Password"
+            formControlName="repeatPassword">
+            <div *ngIf="form.get('password').value != form.get('repeatPassword').value && form.get('password').touched && form.get('repeatPassword').touched" class="text-danger text-center mt-2">
+            The password doesn't match</div>
+                
+            <!-- <div *ngIf="form.get('repeatPassword').hasError('required') && form.get('repeatPassword').touched"  class="text-danger text-center mt-2"> 
+            Field is required
+            </div> -->
+        </div>
+        </div> 
+
+      <div class="col-md-12 mx-auto">
+        <p class="text-center">By creating an account you agree to our  <a href="login">Terms & Privacy.</a> </p> 
+      </div>
+
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+            <button [disabled]="form.invalid" class="btn btn-primary btn-block">Register Account</button>
+        </div>  
+      </div>
+
+      <div class="col-md-12 mx-auto">
+        <p class="text-center">Already have an account? <a href="login">Log In</a> </p> 
+      </div>
+    </div>                                                                
+    </form>
+    </article>
+    </div> 
+  </div> 

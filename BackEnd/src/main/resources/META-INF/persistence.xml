@@ -1,0 +1,16 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"             version="2.1">
+    <persistence-unit name="Persistence" transaction-type="RESOURCE_LOCAL">
+        <!-- Persistence provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Entity classes -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:sqlserver://team3-sacchon.c5zebmmztp9q.eu-central-1.rds.amazonaws.com;database=sacchon" />
+            <property name="javax.persistence.jdbc.user" value="team3" />
+            <property name="javax.persistence.jdbc.password" value="team3sacchon" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

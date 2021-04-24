@@ -1,0 +1,65 @@
+<div class="navbar navbar-expand-lg navbar navbar-light" >
+  <!-- style="background-color: #e3f2fd;" -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          SACCHON
+         <!-- <a class="nav-link" [routerLink]="['view']">View patients <span class="sr-only">(current)</span></a> -->
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"  [routerLink]="['patient/home']"> Home <span class="sr-only">(current)</span> </a>
+         <!-- <a class="nav-link" [routerLink]="['view']">View patients <span class="sr-only">(current)</span></a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['patient/history']"> History </a>
+          <!--<a class="nav-link" [routerLink]="['insert']">Create product</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['patient/consultations']"> Consultations </a>
+          <!--<a class="nav-link" [routerLink]="['insert']">Create product</a> -->
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['patient/data']"> New Data </a>
+          <!--<a class="nav-link" [routerLink]="['insert']">Create product</a> -->
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['patient/settings']"> Settings </a>
+            <!--<a class="nav-link" [routerLink]="['insert']">Create product</a> -->
+        </li>
+      
+      </ul>
+
+
+      
+      <form class="form-inline">
+        <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onClick()" type="submit">Logout</button>
+      </form>
+   
+  <!-- 
+      <form class="form-inline" *ngIf="isLogged">
+        <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">LOGOUT</button>
+      </form> -->
+    </div>
+  </div>
+      <!-- <form class="form-inline">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">LOGOUT</button>
+      </form>
+    </div> -->
+
+
+    
+
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    
+    
+  
+ 
+  
+  

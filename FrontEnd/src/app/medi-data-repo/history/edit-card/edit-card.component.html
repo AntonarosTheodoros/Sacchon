@@ -1,0 +1,12 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+        
+        <div class="form-group">
+            <label for="carbInput">Edit Carb level: </label>
+            <input type="text" class="form-control" id="carbInput" formControlName="carb">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>

@@ -1,0 +1,37 @@
+ <div class="container">
+      <div class="card card-style" style = "width:50%">
+        <article class = "card-body" style = "margin:auto;width:80%">
+          <p class="header-style">Sign into your account</p>
+          <form [formGroup]="form" (ngSubmit)="logIn()">
+
+            <div class="form-group">
+
+              <input  type="text" class="form-control" id="username" placeholder="Username" formControlName="username">
+                    <div *ngIf="form.get('username').hasError('required') && form.get('username').touched"  class="text-danger text-center mt-2">
+                        This field is required.
+                    </div>
+            </div>
+
+            <div class="form-group">
+              <input type="password"  class="form-control" id="password"  placeholder="Password" formControlName="password"> 
+              <div *ngIf="form.get('password').hasError('required') && form.get('password').touched"  class="text-danger text-center mt-2">
+                This field is required.
+              </div>
+            </div>
+
+            <button [disabled]="form.invalid" class="btn btn-primary btn-block">Submit</button>
+                  
+                </form>
+                <p class="text-center">Don't have an account? <a [routerLink]="['../signup']">Sign Up</a> </p> 
+               
+        
+        </article>
+                 
+       </div>
+      </div> 
+
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+      
+  

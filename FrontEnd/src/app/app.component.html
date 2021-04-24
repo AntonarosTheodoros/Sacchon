@@ -1,0 +1,47 @@
+{{updateStorage()}}
+
+<ng-template [ngIf]="role == '1'" [ngIfElse]="doctor">
+  <div>
+    <app-mdr-nav-bar></app-mdr-nav-bar>
+  </div>
+</ng-template>
+
+<ng-template #doctor>
+    <ng-template [ngIf]="role == '2'" [ngIfElse]="chiefdoctor">
+      <div>
+        <app-da-nav-bar></app-da-nav-bar>
+      </div>
+    </ng-template>
+</ng-template>
+
+
+<ng-template #chiefdoctor>
+  <ng-template [ngIf]="role == '3'" [ngIfElse]="home">
+    <div>
+      <app-r-nav-bar></app-r-nav-bar>
+    </div>
+  </ng-template>
+</ng-template>
+
+
+<ng-template #home>
+  <div>
+    <app-nav-bar></app-nav-bar>
+  </div>
+</ng-template>
+
+
+
+  
+
+<div class="footer">
+  <img src="../assets/logo_codehub.png" class="mr-5" style = "width: 8%;"> 
+  
+  Team 3 - Sacchon
+  <img src="../assets/Logo_Footer_1.png" class="ml-5"> 
+ 
+
+
+</div>
+
+

@@ -1,0 +1,59 @@
+
+
+<div class="container">
+
+    <div *ngIf="notification == '1'">
+        <div class="alert alert-danger" id="alert-box">
+          
+          <button type="button" class="close" (click)="onClickUpdate()" data-dismiss="alert"> <i class="fa fa-times"> </i></button>
+          
+          
+          <a (click)="onClickView()"><strong> <i class="fa fa-bell"></i>  New Notification!</strong> </a> A consultation has been modified by your doctor.
+        </div>
+      </div>
+</div>
+
+<p></p>
+<p></p>
+<div class="card custom_style">
+  <div class="c-body">
+
+      <h3>
+            Welcome {{name}}!  </h3>
+  </div>
+
+
+</div>
+
+<div class="card custom_style">
+  <div class="c-body">
+    <div class="mb-4">
+      <h3> Your active consultation</h3>
+    </div>
+
+    <table class="table table-striped" style="table-layout:fixed;">
+      <thead>
+          <tr>
+              <th>Date</th>
+              <th>Medication</th>
+              <th>Dosage</th>
+              <th>Comment</th>
+  
+          </tr>
+      </thead>
+  
+      <tbody>
+          <tr>
+              <td>{{current_consultation.date | date}}</td>
+              <td scope="row">{{current_consultation.medicationName}}</td>
+              <td>{{current_consultation.dosage}}</td>
+              <td>{{current_consultation.comment}}</td>
+  
+      </tbody>
+  
+      </table>
+  
+
+  </div>
+
+</div>

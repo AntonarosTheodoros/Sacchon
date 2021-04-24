@@ -1,0 +1,78 @@
+<div class="card custom_style">
+
+
+    <div class="container" style=" width:90%">
+        <div class="row">
+
+            <div class="col">
+                <div class="text-center mt-3">         
+                    <h3> Current Consultation</h3>
+                </div>
+
+                <div class="table-wrapper-scroll-y custom-scrollbar">
+
+                    <table class="table table-striped" style="table-layout:fixed;">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Medication</th>
+                            <th>Dosage</th>
+                            <th>Comment</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{current_consultation.date | date}}</td>
+                            <td scope="row">{{current_consultation.medicationName}}</td>
+                            <td>{{current_consultation.dosage}}</td>
+                            <td>{{current_consultation.comment}}</td>
+
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container" style=" width:90%">
+        <div class="row">
+
+            <div class="col">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <div class="mb-3 mt-2">
+                        <h3> Past Consultations</h3>
+                    </div>
+                    
+                    <table class="table table-striped" style="table-layout:fixed;">
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Medication</th>
+                                <th>Dosage</th>
+                                <th>Comment</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let g of consultation_list">
+                                <td>{{g.date | date}}</td>
+                                <td scope="row">{{g.medicationName}}</td>
+                                <td>{{g.dosage}}</td>
+                                <td>{{g.comment}}</td>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>

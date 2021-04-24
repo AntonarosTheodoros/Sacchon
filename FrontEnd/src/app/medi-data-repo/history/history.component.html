@@ -1,0 +1,109 @@
+<div class="titles">
+
+
+</div>
+
+
+<app-average-data></app-average-data>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped">
+
+          <thead>
+            <tr>
+              <th>Carb mg/mL</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let g of carb_list">
+              <td scope="row">{{g.carb}}</td>
+              <td>{{g.date | date}}</td>
+              <td>{{g.date | date: 'mediumTime'}}</td>
+              <td> <button class="btn btn-outline-success mr-2" (click)="editClickCarb(g.id)"> <i
+                    class="fa fa-pencil"></i> </button> <button class="btn btn-outline-danger mr-2"
+                  (click)="deleteClickCarb(g.id)"> <i class="fa fa-trash"></i> </button></td>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="table-wrapper-scroll-y my-custom-scrollbar ml-2">
+        <table class="table table-bordered table-striped ">
+
+          <thead>
+            <tr>
+              <th>Glucose Level</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let g of glucose_list">
+              <td scope="row">{{g.glucose}}</td>
+              <td>{{g.date | date}}</td>
+              <td>{{g.date | date: 'mediumTime'}}</td>
+              <td> <button class="btn btn-outline-success mr-2" (click)="editClickGlucose(g.id)"> <i
+                    class="fa fa-pencil"></i>
+                </button> <button class="btn btn-outline-danger mr-2" (click)="deleteClickGlucose(g.id)"> <i
+                    class="fa fa-trash"></i> </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <div *ngIf="editFormShow">
+        <form [formGroup]="form" (ngSubmit)="onClickSubmitEditCard()">
+
+          <div class="form-group">
+            <label for="carbInput">Edit Carb level: </label>
+            <input type="text" class="form-control" id="carbInput" formControlName="carb">
+          </div>
+          <button class="btn btn-primary mb-5">Submit</button>
+        </form>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="col">
+
+
+      <div *ngIf="editFormGlucoseShow">
+        <form [formGroup]="formGlucose" (ngSubmit)="onClickSubmitGlucoseEditCard()">
+
+          <div class="form-group">
+            <label for="glucoseInput">Edit Glucose level: </label>
+            <input type="text" class="form-control" id="glucoseInput" formControlName="glucose">
+          </div>
+          <button class="btn btn-primary mb-5">Submit</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
